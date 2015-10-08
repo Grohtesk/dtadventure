@@ -34,29 +34,8 @@
             "step": 4
           }
         }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Trésor",
-      "description": "Un coffre ! Allez-vous osez l'ouvrir ?",
-      "actions": [
-        {
-          "type": "chest",
-          "name": "Ouvrez le coffre",
-          "params": {
-            "life": 0,
-            "gold": 100
-          }
-        },
-        {
-          "type": "go",
-          "name": "Sortez",
-          "params": {
-            "step": 2
-          }
-        }
-      ]
+      ],
+      "start": false
     },
     {
       "id": 4,
@@ -67,15 +46,15 @@
           "type": "fight",
           "name": "Combattez le dragon",
           "params": {
-            "life": -10,
-            "gold": 1000
+            "gold ": " 100",
+            "life": "-10"
           }
         },
         {
           "type": "go",
           "name": "Sortez",
           "params": {
-            "step": 2
+            "step": "4"
           }
         }
       ]

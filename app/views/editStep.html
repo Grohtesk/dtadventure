@@ -1,0 +1,42 @@
+<form method="POST" role="form" ng-submit="ctrl.saveStep()" novalidate>
+	<legend><h2>Édition</h2></legend>
+
+	<div class="form-group">
+		<label for="name">Nom *</label>
+		<input type="text" class="form-control" id="name" ng-model="ctrl.step.name" required>
+	</div>
+	<div class="form-group">
+		<label for="description">Description</label>
+		<textarea ng-model="ctrl.step.description" name="description" id="description" class="form-control" rows="3"></textarea>
+	</div>
+	<div class="form-group">
+		<label for="start">Étape de départ</label>
+		<input type="checkbox" id="start" ng-model="ctrl.step.start">
+	</div>
+
+	<h3>Actions</h3>
+	<div ng-repeat="action in ctrl.step.actions track by $index">
+		<p>action n°{{$index+1}}</p>
+		<div class="well">
+			<div class="form-group">
+				<label for="name">Nom</label>
+				<input type="text" class="form-control" id="name" ng-model="action.name">
+			</div>
+			<div class="form-group">
+				<label for="type">Type</label>
+				<select name="type" id="type" ng-model="action.type" ng-options="ty for ty in ctrl.types"></select>
+			</div>
+			<div class="form-group">
+				<label for="params">Params</label>
+				<textarea ng-model="action.params" name="params" id="params" class="form-control" rows="3"></textarea>
+			</div>
+		</div>
+	</div>
+	<p>
+		<button class="btn btn-default" type='button' ng-click="ctrl.addAction()">Ajouter Action</button>
+	</p>
+	<p>
+		<button type="submit" class="btn btn-primary">Submit</button>
+		<button type="button" class="btn btn-danger" ng-click="ctrl.deleteStep()">Delete</button>
+	</p>
+</form>

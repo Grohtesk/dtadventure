@@ -1,16 +1,22 @@
-<table>
+<div>
+    <label for="search">Recherche</label><input type="text" id="search" class="form-control" ng-model="ctrl.search">
+</div>
+<table class="table table-striped">
     <thead>
         <tr>
-            <th>Nom</th>
+            <th><a href="" ng-click="ctrl.sortBy('id')">Nom</a></th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="step in ctrl.steps track by $index">
+        <tr ng-repeat="step in ctrl.steps | orderBy:ctrl.predicate:ctrl.reverse | filter:ctrl.search track by $index">
             <td>{{ step.name }}</td>
             <td>
-                <a ng-href="">Edit</a>
-                <a ng-href="#/play/{{ step.id }}">Start !</a>
+                <a class="btn btn-info" ng-href="#/edit/{{step.id}}">Edit</a>
+            </td>
+            <td>
+                <a class="btn btn-primary" ng-show="step.start" ng-href="#/play/{{ step.id }}">Start !</a>
             </td>
         </tr>
     </tbody>

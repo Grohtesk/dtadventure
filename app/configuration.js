@@ -14,6 +14,12 @@ export default function configuration ($routeProvider) {
         controllerAs: 'ctrl'
     })
 
+    .when('/edit/:id', {
+        templateUrl: 'views/editStep.html',
+        controller: 'EditStepController',
+        controllerAs: 'ctrl'
+    })
+
     .otherwise({
         redirectTo: '/'
     })

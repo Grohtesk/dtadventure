@@ -10,13 +10,23 @@ export default function StepService ($http, ActionService) {
             .then(handleResponse)
         },
 
-        // createStep: function (step) {
-        //     return $http.post('http://localhost:3000/steps', step)
-        //     .then(handleResponse)
-        // },
+        createStep: function (step) {
+            return $http.post('http://localhost:3000/steps', step)
+            .then(handleResponse)
+        },
 
         getStep: function (id) {
             return $http.get('http://localhost:3000/steps/' + id)
+            .then(handleResponse)
+        },
+
+        setStep: function (step) {
+            return $http.put('http://localhost:3000/steps/' + step.id, step)
+            .then(handleResponse)
+        },
+
+        deleteStep:function(id){
+            return $http.delete('http://localhost:3000/steps/' + id)
             .then(handleResponse)
         },
 

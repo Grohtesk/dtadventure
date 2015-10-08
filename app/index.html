@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>DTAdventure</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body ng-app="DTAdventure">
 
-    <header ng-include="'views/header.html'"></header>
-
-    <div ng-view></div>
+	<header ng-include="'views/header.html'" class="jumbotron"></header>
+    <main class="container">
+    	
+    	<div ng-view></div>
+    </main>
 
     <script src="bundle.js"></script>
 </body>
