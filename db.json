@@ -10,7 +10,14 @@
           "type": "go",
           "name": "Entrez dans le donjon",
           "params": {
-            "step": 2
+            "step": "2"
+          }
+        },
+        {
+          "name": "Aller dans le Jardin",
+          "type": "go",
+          "params": {
+            "step": "5"
           }
         }
       ]
@@ -54,10 +61,25 @@
           "type": "go",
           "name": "Sortez",
           "params": {
-            "step": "4"
+            "step": "1"
           }
         }
       ]
+    },
+    {
+      "name": "Jardin",
+      "description": "Fontaine, lel",
+      "start": true,
+      "actions": [
+        {
+          "name": "Entrée du donjon",
+          "type": "go",
+          "params": {
+            "step": "1"
+          }
+        }
+      ],
+      "id": 5
     }
   ]
 }

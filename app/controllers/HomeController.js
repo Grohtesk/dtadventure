@@ -1,7 +1,7 @@
 export default function HomeController (StepService) {
 
     var ctrl=this;
-    ctrl.predicate="name";
+    ctrl.predicate="id";
 
     StepService.getSteps()
     .then(function (steps) {

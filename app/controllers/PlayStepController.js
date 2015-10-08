@@ -1,13 +1,15 @@
 export default function StepController ($routeParams, StepService, UserService) {
 
+	var ctrl=this;
+
     StepService.getStep($routeParams.id)
     .then(function (step) {
-        this.step = step
-    }.bind(this))
+        ctrl.step = step
+    })
 
-    this.user = UserService
+    ctrl.user = UserService
 
-    this.selectAction = function (action) {
+    ctrl.selectAction = function (action) {
         StepService.action(action, this.user)
     }
 
